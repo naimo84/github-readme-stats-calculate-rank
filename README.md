@@ -1,5 +1,7 @@
 # github-readme-stats-calculate-rank
 
+Commandline tool to calculate your [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) rank, using the latest and official [calculateRank.js](https://github.com/anuraghazra/github-readme-stats/blob/master/src/calculateRank.js)
+
 ## :question: Get Help
 
 For bug reports and feature requests, open issues. :bug:
@@ -64,7 +66,7 @@ call from cli:
 npx github-readme-stats-calculate-rank@latest --totalRepos 25 --totalCommits 1800 --contributions 11 --followers 16 --prs 16 --issues 51 --stargazers 127
 ```
 output:
-```json
+```js
 { level: 'A++', score: 44.902066802062436 }
 ```
 

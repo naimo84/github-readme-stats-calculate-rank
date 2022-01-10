@@ -61,6 +61,12 @@ Commands:
   help [command]                   display help for command
 ```
 
+install via npm globally:
+```sh
+npm install -g github-readme-stats-calculate-rank
+github-readme-stats-calculate-rank --totalRepos 25 --totalCommits 1800 --contributions 11 --followers 16 --prs 16 --issues 51 --stargazers 127
+```
+
 call from cli:
 ```sh
 npx github-readme-stats-calculate-rank@latest --totalRepos 25 --totalCommits 1800 --contributions 11 --followers 16 --prs 16 --issues 51 --stargazers 127

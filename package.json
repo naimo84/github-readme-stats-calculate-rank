@@ -39,5 +39,11 @@
     "rank",
     "commandline",
     "cli"
-  ]
+  ],
+  "scripts": {
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "release-it": "^14.12.1"
+  }
 }

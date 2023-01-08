@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import { execute } from '../cli.js';
+import { execute } from '../cli.mjs';
 execute(process.argv);

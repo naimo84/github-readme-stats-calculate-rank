@@ -27,9 +27,9 @@ async function status(cli1, cli2, cli3) {
     await pipeline(
         got.stream('https://raw.githubusercontent.com/anuraghazra/github-readme-stats/master/src/calculateRank.js'),
 
-        fs.createWriteStream(new URL('./calculateRank.cjs', import.meta.url))
+        fs.createWriteStream(new URL('./calculateRank.mjs', import.meta.url))
     );
-    const calculateRank = await import(new URL('./calculateRank.cjs', import.meta.url));
+    const calculateRank = await import(new URL('./calculateRank.mjs', import.meta.url));
 
     console.log(calculateRank.default(options));
 }

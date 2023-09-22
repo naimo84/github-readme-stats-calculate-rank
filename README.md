@@ -47,13 +47,14 @@ Have an idea? Found a bug? See [how to contribute][contributing].
 Usage: calculateRank [options] [command]
 
 Options:
-  --totalRepos [totalRepos]
-  --totalCommits [totalCommits]
+  --repos [repos]
+  --commits [commits]
   --contributions [contributions]
   --followers [followers]
   --prs [prs]
   --issues [issues]
-  --stargazers [stargazers]
+  --stars [stars]
+  --all_commits [all_commits]
   -h, --help                       display help for command
 
 Commands:
@@ -64,16 +65,16 @@ Commands:
 install via npm globally:
 ```sh
 npm install -g github-readme-stats-calculate-rank
-github-readme-stats-calculate-rank --totalRepos 25 --totalCommits 1800 --contributions 11 --followers 16 --prs 16 --issues 51 --stargazers 127
+github-readme-stats-calculate-rank --repos 25 --commits 1800 --all_commits 1800 --contributions 11 --followers 16 --prs 16 --issues 51 --stars 127 --reviews 0
 ```
 
 call from cli:
 ```sh
-npx github-readme-stats-calculate-rank@latest --totalRepos 25 --totalCommits 1800 --contributions 11 --followers 16 --prs 16 --issues 51 --stargazers 127
+npx github-readme-stats-calculate-rank@latest --repos 25 --commits 1800 --all_commits 1800 --contributions 11 --followers 16 --prs 16 --issues 51 --stars 127 --reviews 0
 ```
 output:
 ```js
-{ level: 'A++', score: 44.902066802062436 }
+{ level: 'B+', percentile: 47.79401195467249 }
 ```
 
 

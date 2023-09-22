@@ -21,9 +21,7 @@ async function getOptions(cli1, cli2, cli3) {
 
 async function status(cli1, cli2, cli3) {
     const options = await getOptions(cli1, cli2, cli3)
-    if (!options.totalCommits || options.totalCommits === '0') {
-        return;
-    }
+ 
     await pipeline(
         got.stream('https://raw.githubusercontent.com/anuraghazra/github-readme-stats/master/src/calculateRank.js'),
 
@@ -32,17 +30,52 @@ async function status(cli1, cli2, cli3) {
     const calculateRank = await import(new URL('./calculateRank.mjs', import.meta.url));
 
     console.log(calculateRank.default(options));
+
+
+
 }
 
 export async function execute(rawArgs) {
     try {
-        program.addOption(new Option('--totalRepos [totalRepos]', '', '0'));
-        program.addOption(new Option('--totalCommits [totalCommits]', '', '0'));
-        program.addOption(new Option('--contributions [contributions]', '', '0'));
-        program.addOption(new Option('--followers [followers]', '', '0'));
-        program.addOption(new Option('--prs [prs]', '', '0'));
-        program.addOption(new Option('--issues [issues]', '', '0'));
-        program.addOption(new Option('--stargazers [stargazers]', '', '0'));
+        let repos = new Option('--repos [repos]', '');
+        repos.defaultValue=0;
+
+        let all_commits = new Option('--all_commits [all_commits]', '');        
+        all_commits.defaultValue=0;
+
+        let commits = new Option('--commits [commits]', '');
+        commits.defaultValue=0;
+
+        let contributions = new Option('--contributions [contributions]', '');
+        contributions.defaultValue=0;
+
+        let followers = new Option('--followers [followers]', '');
+        followers.defaultValue=0;
+
+        let prs = new Option('--prs [prs]', '');
+        prs.defaultValue=0;
+
+        let issues = new Option('--issues [issues]', '');
+        issues.defaultValue=0;
+
+        let stars = new Option('--stars [stars]', '');
+        stars.defaultValue=0;
+
+
+        let reviews = new Option('--reviews [reviews]', '');
+        reviews.defaultValue=0;
+
+        program.addOption(repos);
+        program.addOption(all_commits)
+        program.addOption(commits);
+        program.addOption(contributions);
+        program.addOption(followers);
+        program.addOption(prs);
+        program.addOption(issues);
+        program.addOption(stars);
+        program.addOption(reviews);
+
+        
 
         program
             .command('calculateRank', { isDefault: true })
